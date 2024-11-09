@@ -1,0 +1,22 @@
+# Target: WASP-107b
+# Instrument: NIRISS/SOSS
+# Pipeline: exoTEDRF
+# 1D Extraction: box
+# Spectral Resoluton: None
+# Author: sky
+# Date: 2024-11-03T06:27:22
+#
+# Fit Metadata
+# $P$: 5.72148926
+# $\Omega$: 90.0
+# Linear Model: x
+#
+# Column wave: Central wavelength of bin (micron)
+# Column wave_err: Wavelength bin halfwidth (micron)
+# Column dppm: (Rp/R*)^2 (ppm)
+# Column dppm_err: Error in (Rp/R*)^2 (ppm)
+# Column order: SOSS diffraction order
+#
+wave,wave_err,dppm,dppm_err,order
+0.7223610245086279,-0.5567585527896881,20077.20800977039,103.23310755093462,2
+1.8251966627002114,-0.5567585527896881,20475.84185340642,35.89240116582889,1

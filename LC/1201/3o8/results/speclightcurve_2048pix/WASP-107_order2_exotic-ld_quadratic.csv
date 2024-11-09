@@ -1,0 +1,16 @@
+# Target: WASP-107
+# Instrument: NIRISS/SOSS
+# Order: 2
+# Author: sky
+# Date: 2024-11-03T06:22:56
+# Stellar M/H: 0.02
+# Stellar log g: 4.633
+# Stellar Teff: 4425
+# Algorithm: ExoTiC-LD
+# Limb Darkening Model: quadratic
+# Column wave: Central wavelength of bin (micron)
+# Column c1: Quadratic Coefficient 1
+# Column c2: Quadratic Coefficient 2
+#
+wave,c1,c2
+0.7223610245086279,0.513365489120698,0.16899472969406928

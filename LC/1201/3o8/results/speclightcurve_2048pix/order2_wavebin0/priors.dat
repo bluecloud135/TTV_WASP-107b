@@ -1,0 +1,14 @@
+P_p1                 fixed                5.72148926          
+t0_p1                normal               60106.97447852884,0.1
+p_p1                 normal               0.1446,0.05         
+b_p1                 normal               0.137922,0.1        
+ecc_p1               normal               0.06,0.06           
+omega_p1             fixed                90.0                
+a_p1                 normal               17.96,0.3           
+q1_SOSS              truncatednormal      0.4656154682209371,0.2,0.0,1.0
+q2_SOSS              truncatednormal      0.3761689756858874,0.2,0.0,1.0
+mdilution_SOSS       fixed                1                   
+mflux_SOSS           fixed                0                   
+sigma_w_SOSS         loguniform           0.1,100000.0        
+theta0_SOSS          uniform              -1,1                
+theta1_SOSS          uniform              -1,1                

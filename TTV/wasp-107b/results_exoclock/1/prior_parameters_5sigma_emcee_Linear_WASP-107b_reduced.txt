@@ -1,0 +1,7 @@
+period = 5.72148926
+parameters = [[2456514.4060000004, 2456514.416, 'U'], [5.7213892600000005, 5.72158926, 'U']]
+parameter_names = ['$t_0$', '$Period$']
+kind = Linear
+rej_sigma = 5
+sampler = emcee
+sampler_parameters = {'nwalkers': 32, 'nsteps': 100000, 'nburnin': 15000}

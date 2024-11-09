@@ -1,0 +1,103 @@
+
+Starting Stage 4: Generate Light Curves
+
+Input directory: /home/sky/Work/Project/wasp-107b/process/1280/2o1/Stage3/./S3_2024-09-03_wasp-107b_run1/ap4_bg10/
+Output directory: /home/sky/Work/Project/wasp-107b/process/1280/2o1/Stage3/../Stage4-re-ori/S4_2024-09-25_wasp-107b_run3/ap4_bg10/
+Copying S4 control file
+Loading S3 save file:
+/home/sky/Work/Project/wasp-107b/process/1280/2o1/Stage3/./S3_2024-09-03_wasp-107b_run1/ap4_bg10/S3_wasp-107b_ap4_bg10_SpecData.h5
+Stage 4 MAD = 9278.13 ppm
+Generating light curves
+  Bandpass 0 = 6.000 - 12.000
+  Identified 17 outliers for wavelength 9.0000 microns
+  Sigma clipped 17 outliers in time series
+    MAD = 419 ppm
+Generating white-light light curve
+  White-light Bandpass = 6.000 - 12.000
+  Identified 17 outliers for wavelength 9.5030 microns
+  Sigma clipped 17 outliers in time  series
+    MAD = 419 ppm
+Generating limb-darkening coefficients...
+...using exotic-ld package...
+Using custom throughput file ./exotic-ld_data/Sensitivity_files/JWST_MIRI_LRS_throughput.csv
+...using exotic-ld package...
+Using custom throughput file ./exotic-ld_data/Sensitivity_files/JWST_MIRI_LRS_throughput.csv
+Saving results...
+
+Total time (min): 0.04
+
+Starting Stage 5: Light Curve Fitting
+
+Input directory: /home/sky/Work/Project/wasp-107b/process/1280/2o1/Stage4-re-ori/../Stage4-re-ori/S4_2024-09-25_wasp-107b_run3/ap4_bg10/
+Output directory: /home/sky/Work/Project/wasp-107b/process/1280/2o1/Stage4-re-ori/../Stage5-re-ori/S5_2024-11-03_wasp-107b_run2/ap4_bg10/
+Copying S5 control file
+Copying S5 parameter control file
+Manually removing data points from meta.manual_clip...
+
+Using generated limb-darkening coefficients with exotic-ld 
+
+
+Starting Fit of White-light Light Curve
+
+Using the following limb-darkening values:
+u1, 0.06067761231780352
+u2, 0.10840836436475393
+=========================
+Starting emcee fit.
+No covariance matrix from LSQ - falling back on a step size based on the prior range
+Starting lnprob: -2544071.495725774
+Running emcee burn-in...
+Ending lnprob: 26140.693940111374
+Mean acceptance fraction: 0.390
+Mean autocorrelation time: 161.188 steps
+Reduced Chi-squared: 0.997012280561164
+
+EMCEE RESULTS:
+rp: 0.1438166429033283 (+0.00013746793888713693, -0.0001392012405424803)
+t0: 59963.968763249155 (+1.551167224533856e-05, -1.552094181533903e-05)
+inc: 89.37223157331412 (+0.05566503552675783, -0.051331626928060814)
+a: 17.702525926230393 (+0.14537693243796213, -0.215555799902873)
+ecc: 0.011787895640807964 (+0.012501168679346178, -0.008245553206362301)
+u1: 0.10157623005220724 (+0.016016760012650635, -0.015997969107456572)
+u2: 0.0046481923100063095 (+0.03320329947207608, -0.03298477964650431)
+c0: 1.0067071166973203 (+8.585159199547832e-06, -8.446514889959289e-06)
+c1: 0.0006401290196853563 (+7.598787130750977e-05, -7.616279781436379e-05)
+scatter_mult: 1.7453177363867427 (+0.019289600754141656, -0.01892063741525951); 436.29827137329147 (+4.8220557718827015, -4.729821525018481) ppm
+
+Completed emcee fit.
+-------------------------
+=========================
+Saving results
+
+Using generated limb-darkening coefficients with exotic-ld 
+
+
+Starting Channel 0 of 1
+
+Using the following limb-darkening values:
+u1, 0.06067761231780352
+u2, 0.10840836436475393
+=========================
+Starting emcee fit.
+No covariance matrix from LSQ - falling back on a step size based on the prior range
+Starting lnprob: 26096.946761093564
+Running emcee burn-in...
+Ending lnprob: 26160.782516220286
+Mean acceptance fraction: 0.516
+Mean autocorrelation time: 65.866 steps
+Reduced Chi-squared: 0.997069055915949
+
+EMCEE RESULTS:
+rp: 0.14380891380297894 (+5.282625299948829e-05, -5.312430373582977e-05)
+t0: 59963.96876335544 (+1.0968746209982783e-05, -1.094840990845114e-05)
+u2: 0.06654234544098417 (+0.0044903925102870584, -0.004495370444831184)
+c0: 1.00670605179217 (+5.8802935387625155e-06, -5.890100213790106e-06)
+c1: 0.0006387433500182805 (+5.3319878218057435e-05, -5.3582707005660874e-05)
+scatter_mult: 1.747301322397747 (+0.01931706781526854, -0.018871769870205668); 436.79413245902884 (+4.828922046738863, -4.717605511287143) ppm
+
+Completed emcee fit.
+-------------------------
+=========================
+Saving results
+
+Total time (min): 78.04

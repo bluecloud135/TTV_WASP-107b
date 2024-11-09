@@ -1,0 +1,7 @@
+period = 5.72148926
+parameters = [[2456514.4065079917, 2456514.4165079915, 'U'], [5.721487908373708, 0.0001, 'N'], [0.01875, 0.001, 0, 1, 'TN'], [2.93014, 0.1, 0, 6.283185307179586, 'TN'], [1e-06, 0.001, 'LU']]
+parameter_names = ['$t_0$', '$Period$', '$eccentricity$', '$\\omega[radian]$', '$d\\omega/dE[radian/epoch]$']
+kind = Precession
+rej_sigma = 5
+sampler = dynamic_dynesty
+sampler_parameters = {'nlive_init': 3000, 'dlogz_init': 0.001}

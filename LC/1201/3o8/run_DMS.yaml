@@ -1,0 +1,132 @@
+# ========================= BEGIN DMS CONFIG FILE =============================
+##
+
+# This is the configuration file for run_DMS.py.
+#
+# ===== Key Parameters =====
+# Path to CRDS cache.
+crds_cache_path : '/home/sky/.crds_cache/'
+# Input data file directory.
+input_dir : './pipeline_outputs_directory/Stage2/'
+# input_dir : '/home/sky/Work/Project/wasp-107b/process/1201/3o8/Stage0/'
+# Input file tag.
+# input_filetag : 'uncal'
+input_filetag : 'badpix'
+
+# ===== Stage 1 Input Files & Parameters =====
+# List of stage 1 steps to run or skip.
+DQInitStep : 'run'
+SaturationStep : 'run'
+SuperBiasStep : 'run'
+RefPixStep : 'run'
+DarkCurrentStep : 'skip'
+OneOverFStep_grp : 'run'
+LinearityStep : 'run'
+JumpStep : 'run'
+RampFitStep : 'run'
+GainScaleStep : 'run'
+# Background model. Default model available here:
+# https://jwst-docs.stsci.edu/jwst-near-infrared-imager-and-slitless-spectrograph/niriss-observing-strategies/niriss-soss-recommended-strategies
+background_file : 'model_background256.npy'
+# 1/f correction method; either 'scale-achromatic', 'scale-achromatic-window', 'scale-chromatic', or 'solve'.
+oof_method : 'scale-achromatic'
+# For 1/f correction; estimate of 1D or 2D timeseries for order 1 (optional).
+timeseries : None
+# For 1/f correction; estimate of 2D timeseries for order 2. Only necessary if oof_method is "scale-chromatic".
+timeseries_o2 : None
+# For 1/f correction; outlier pixel maps (optional).
+outlier_maps : None
+# Width, in pixels, of inner trace mask.
+inner_mask_width : 40
+# Width, in pixels, of outer trace mask.
+outer_mask_width : 70
+# For jump detection; whether to flag outliers up-the-ramp (jwst default).
+flag_up_ramp : False
+# For jump detection; sigma threshold for a pixel to be flagged as an outlier.
+# jump_threshold : 15
+jump_threshold : 4
+# For jump detection; whether to also flag outliers in the time domain.
+flag_in_time : True
+# For time domain jump detection; sigma threshold for a pixel to be flagged as an outlier.
+# time_jump_threshold : 10
+time_jump_threshold : 4
+# DMS Stage 1 kwargs. Format should be: {'step_name': {'kwd': value}}.
+stage1_kwargs : {}
+# stage1_kwargs : {'BackgroundStep':{'background_coords1':[150,200,300,500]}}
+
+
+# ===== Stage 2 Input Files & Parameters =====
+# List of stage 2 steps to run or skip.
+AssignWCSStep : 'run'
+SourceTypeStep: 'run'
+FlatFieldStep : 'run'
+BackgroundStep : 'skip'
+OneOverFStep_int : 'skip'
+BadPixStep : 'run'
+TracingStep : 'run'
+
+#CPU
+nthreads : 23
+
+# For outlier detection; sigma threshold for a pixel to be flagged as an outlier, spatially.
+# space_outlier_threshold : 15
+space_outlier_threshold : 3
+# For outlier detection; sigma threshold for a pixel to be flagged as an outlier, temporally.
+# time_outlier_threshold : 10
+time_outlier_threshold : 3
+# If True, calculate the stability of the SOSS trace over the course of the TSO using principle component analysis.
+calculate_stability : True
+# Number of principle components to extract. Only necessary if calculate_stability is True.
+pca_components : 10
+# If True, generate a smoothed estimate of the order 1 white light curve.
+generate_lc : True
+# Timescale on which to smooth lightcurve estimate (optional).
+smoothing_scale : None
+# If True, use an F277W filter exposure to create a mask of background order 0s.
+generate_order0_mask : False
+# Path to a processed (superbias and background subtracted) F277W exposure data frame (optional). Only necessary if
+# generate_order0_mask is True.
+f277w : None
+# DMS Stage 2 kwargs. Format should be: {'step_name': {'kwd': value}}.
+stage2_kwargs : {}
+
+# ===== Stage 3 Input Files & Parameters =====
+# Extraction method: box or atoca.
+extract_method : 'box'
+# Box width to extract around the trace center. Passing 'optimize' will find and use the aperture width that minimizes
+# the white light curve scatter.
+soss_width : 'optimize'
+# Specprofile reference file for ATOCA (optional).
+specprofile : None
+# Stellar effective temperature in K for wavelength calibration (optional).
+st_teff : 4425
+# Stellar log surface gravity for wavelength calibration (optional).
+st_logg: 4.633
+# Stellar metallicity as [Fe/H] for wavelength calibration (optional).
+st_met : 0.02
+# Planet letter designation.
+planet_letter : 'b'
+# DMS Stage 3 kwargs. Format should be: {'step_name': {'kwd': value}}.
+stage3_kwargs : {}
+
+# ===== Other General Parameters =====
+# Name tag for output file directory.
+output_tag : 're'
+# Pipeline stages to run.
+# run_stages : [1,2]
+run_stages : [3]
+# Type of exposure; either CLEAR or F277W.
+exposure_type : 'CLEAR'
+# Save results of each intermediate step to file.
+save_results : True
+# Force redo of steps which have already been completed.
+force_redo : False
+# Integrations of ingress and/or egress.
+baseline_ints : [50, -50]
+# File with centroids for all three orders for box extraction and 1/f correction (optional).
+# centroids : None
+centroids : './pipeline_outputs_directory_1/Stage2/jw01201008001_04101_00001_nis_centroids.csv'
+# If True, make diagnostic plots.
+do_plots : True
+# ========================= END DMS CONFIG FILE =============================
+Run at 2024-09-26 01:00.

@@ -1,0 +1,211 @@
+
+Starting Stage 1 Processing
+Input directory: /home/sky/Work/Project/wasp-107b/process/1224/4o3/Stage0/./
+Output directory: /home/sky/Work/Project/wasp-107b/process/1224/4o3/Stage0/../Stage1-re/S1_2024-09-25_wasp-107b_run1/
+Copying S1 control file
+
+Found 6 data file(s) ending in uncal.fits
+Starting file 1 of 6: jw01224003001_04102_00001-seg001_nrs1_uncal.fits
+Doing super-bias subtraction.
+  No bias correction applied.
+Starting file 2 of 6: jw01224003001_04102_00001-seg001_nrs2_uncal.fits
+Doing super-bias subtraction.
+  No bias correction applied.
+Starting file 3 of 6: jw01224003001_04102_00001-seg002_nrs1_uncal.fits
+Doing super-bias subtraction.
+  No bias correction applied.
+Starting file 4 of 6: jw01224003001_04102_00001-seg002_nrs2_uncal.fits
+Doing super-bias subtraction.
+  No bias correction applied.
+Starting file 5 of 6: jw01224003001_04102_00001-seg003_nrs1_uncal.fits
+Doing super-bias subtraction.
+  No bias correction applied.
+Starting file 6 of 6: jw01224003001_04102_00001-seg003_nrs2_uncal.fits
+Doing super-bias subtraction.
+  No bias correction applied.
+
+Total time (min): 19.37
+Saving Metadata
+
+Starting Stage 2 Reduction
+Input directory: /home/sky/Work/Project/wasp-107b/process/1224/4o3/Stage0/../Stage1-re/S1_2024-09-25_wasp-107b_run1/
+Output directory: /home/sky/Work/Project/wasp-107b/process/1224/4o3/Stage0/../Stage2-re/S2_2024-09-25_wasp-107b_run1/
+Copying S2 control file
+
+Found 6 data file(s) ending in rateints.fits
+Starting file 1 of 6
+Running the Spec2Pipeline
+
+
+Generating x1dints figure
+Starting file 2 of 6
+Running the Spec2Pipeline
+
+
+Generating x1dints figure
+Starting file 3 of 6
+Running the Spec2Pipeline
+
+
+Generating x1dints figure
+Starting file 4 of 6
+Running the Spec2Pipeline
+
+
+Generating x1dints figure
+Starting file 5 of 6
+Running the Spec2Pipeline
+
+
+Generating x1dints figure
+Starting file 6 of 6
+Running the Spec2Pipeline
+
+
+Generating x1dints figure
+Saving Metadata
+
+Total time (min): 57.05
+
+Starting Stage 3 Reduction
+
+Input directory: /home/sky/Work/Project/wasp-107b/process/1224/4o3/Stage2-re-nrs1/./
+Output directory: /home/sky/Work/Project/wasp-107b/process/1224/4o3/Stage2-re-nrs1/../Stage3-re-nrs1/S3_2024-09-26_wasp-107b_run1/ap5_bg10/
+Using ap=5, bg=10, expand=1
+Copying S3 control file
+
+Found 3 data file(s) ending in calints.fits
+Starting batch 1 of 1 with 3 files
+  Reading file 1...
+  Reading file 2...
+  Reading file 3...
+  Concatenating files...
+  Masking NaNs/infs in data arrays...
+  FLUX has 402348 NaNs/infs, which is 0.57% of all pixels.
+  ERR has 402348 NaNs/infs, which is 0.57% of all pixels.
+  V0 has 402348 NaNs/infs, which is 0.57% of all pixels.
+  Locating source position...
+    Source position on detector is row 12.
+  Automatically getting reference files to convert units to electrons...
+  Converting from data numbers per second (DN/s) to electrons...
+  Computing clean median frame...
+  Correcting curvature and bringing the trace to the center of the detector...
+  !!! Ensure that you are using meddata for the optimal extraction profile !!!
+    Correcting the wavelength solution...
+    Correcting the curvature over all integrations...
+    Updating src_ypos to new center, row 13...
+  Performing background outlier rejection...
+  Performing CxC background subtraction...
+  Creating figures for background subtraction...
+  Recording y position and width for all integrations...
+  Extracting aperture region...
+  Performing optimal spectral extraction...
+  Creating figures for optimal spectral extraction
+Stage 3 MAD = 1542588 ppm
+Generating figure
+Saving Metadata
+
+Total time (min): 4.37
+
+Starting Stage 4: Generate Light Curves
+
+Input directory: /home/sky/Work/Project/wasp-107b/process/1224/4o3/Stage2-re-nrs1/../Stage3-re-nrs1/S3_2024-09-26_wasp-107b_run1/ap5_bg10/
+Output directory: /home/sky/Work/Project/wasp-107b/process/1224/4o3/Stage2-re-nrs1/../Stage4-re-nrs1/S4_2024-09-26_wasp-107b_run1/ap5_bg10/
+Copying S4 control file
+Loading S3 save file:
+/home/sky/Work/Project/wasp-107b/process/1224/4o3/Stage2-re-nrs1/../Stage3-re-nrs1/S3_2024-09-26_wasp-107b_run1/ap5_bg10/S3_wasp-107b_ap5_bg10_SpecData.h5
+Stage 4 MAD = 3184.76 ppm
+Generating light curves
+  Bandpass 0 = 2.870 - 3.700
+  Identified 15 outliers for wavelength 3.2850 microns
+  Sigma clipped 15 outliers in time series
+    MAD = 328 ppm
+Generating white-light light curve
+  White-light Bandpass = 2.870 - 3.700
+  Identified 15 outliers for wavelength 3.2855 microns
+  Sigma clipped 15 outliers in time  series
+    MAD = 328 ppm
+Generating limb-darkening coefficients...
+...using exotic-ld package...
+Using custom throughput file ./exotic-ld_data/Sensitivity_files/JWST_NIRSpec_G395H_throughput.csv
+...using exotic-ld package...
+Using custom throughput file ./exotic-ld_data/Sensitivity_files/JWST_NIRSpec_G395H_throughput.csv
+Saving results...
+
+Total time (min): 0.07
+
+Starting Stage 5: Light Curve Fitting
+
+Input directory: /home/sky/Work/Project/wasp-107b/process/1224/4o3/Stage4-re-nrs1/../Stage4-re-nrs1/S4_2024-09-26_wasp-107b_run1/ap5_bg10/
+Output directory: /home/sky/Work/Project/wasp-107b/process/1224/4o3/Stage4-re-nrs1/../Stage5-re-nrs1/S5_2024-11-03_wasp-107b_run2/ap5_bg10/
+Copying S5 control file
+Copying S5 parameter control file
+Manually removing data points from meta.manual_clip...
+
+Using generated limb-darkening coefficients with exotic-ld 
+
+
+Starting Fit of White-light Light Curve
+
+Using the following limb-darkening values:
+u1, 0.10195730131511184
+u2, 0.1947900145691596
+=========================
+Starting emcee fit.
+No covariance matrix from LSQ - falling back on a step size based on the prior range
+Starting lnprob: -11483196.824461777
+Running emcee burn-in...
+Ending lnprob: 7684.029913787055
+Mean acceptance fraction: 0.352
+Mean autocorrelation time: 197.923 steps
+Reduced Chi-squared: 0.9888112535916437
+
+EMCEE RESULTS:
+rp: 0.14372217166517354 (+0.00021251230370650243, -0.00020585188831084844)
+t0: 60118.44889369775 (+2.101701102219522e-05, -2.088091423502192e-05)
+inc: 89.6190612810189 (+0.14194394037471625, -0.10641119461902804)
+a: 17.79747461099296 (+0.19378735371432754, -0.24820014016315284)
+ecc: 0.016929451180352717 (+0.01438858773631857, -0.010988379608919355)
+u1: 0.12076254792881147 (+0.018385253447683103, -0.01829453801005687)
+u2: 0.14884501134257896 (+0.040228767566532014, -0.0402527799406794)
+c0: 1.008264910327708 (+1.3572941363726443e-05, -1.3458030802659948e-05)
+c1: -0.001619395189707732 (+0.0001436583252636787, -0.00014346101703629436)
+scatter_mult: 4.406417532732216 (+0.09245439714379788, -0.08957368141046196); 338.6447350647295 (+7.105362711035996, -6.883972157583958) ppm
+
+Completed emcee fit.
+-------------------------
+=========================
+Saving results
+
+Using generated limb-darkening coefficients with exotic-ld 
+
+
+Starting Channel 0 of 1
+
+Using the following limb-darkening values:
+u1, 0.10195730131511184
+u2, 0.1947900145691596
+=========================
+Starting emcee fit.
+No covariance matrix from LSQ - falling back on a step size based on the prior range
+Starting lnprob: 7703.24821590643
+Running emcee burn-in...
+Ending lnprob: 7709.025334363311
+Mean acceptance fraction: 0.516
+Mean autocorrelation time: 65.610 steps
+Reduced Chi-squared: 0.9888492730291669
+
+EMCEE RESULTS:
+rp: 0.14368647167893248 (+7.497055331706637e-05, -7.503459068491924e-05)
+t0: 60118.44889369686 (+1.4769066183362156e-05, -1.4799952623434365e-05)
+u2: 0.18177446355020743 (+0.005729084792438083, -0.005775008524691039)
+c0: 1.0082648769140266 (+9.195642012516103e-06, -9.21123313268879e-06)
+c1: -0.001619849339944547 (+9.87664446748459e-05, -9.9662026437393e-05)
+scatter_mult: 4.399983589498515 (+0.0926397536268686, -0.08954861949131132); 338.15026966611185 (+7.119607842514286, -6.882046083418736) ppm
+
+Completed emcee fit.
+-------------------------
+=========================
+Saving results
+
+Total time (min): 66.95

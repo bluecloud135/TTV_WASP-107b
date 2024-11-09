@@ -1,0 +1,7 @@
+period = 5.72148926
+parameters = [[2456514.4065079917, 2456514.4165079915, 'U'], [5.721387908373708, 5.721587908373707, 'U'], [-200, 200, 'U']]
+parameter_names = ['$t_0$', '$Period$', '$\\dot{P}[ms/yr]$']
+kind = Pdot
+rej_sigma = 5
+sampler = emcee
+sampler_parameters = {'nwalkers': 32, 'nsteps': 100000, 'nburnin': 15000}

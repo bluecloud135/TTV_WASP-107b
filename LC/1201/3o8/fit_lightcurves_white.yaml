@@ -1,0 +1,82 @@
+# ======================= BEGIN LIGHT CURVE FIT CONFIG FILE ===========================
+#
+# This is the configuration file for fit_lightcurves.py.
+#
+# ====== Fit Metadata ======
+# Name tag for output file directory.
+output_tag : 'white_re_final'
+# File containing light curves to fit.
+infile : './pipeline_outputs_directory_re/Stage3/WASP-107_box_spectra_fullres.fits'
+# Orders to fit.
+orders : [1, 2]
+# Suffix to apply to fit output files.
+fit_suffix : ''
+# Integrations of ingress and egress.
+baseline_ints : [50, -50]
+# Type of occultation: 'transit' or 'eclipse'.
+occultation_type : 'transit'
+# If True, make summary plots.
+do_plots : True
+# If True, also make corner plot for each bin.
+include_corner : False
+# Number of cores for multiprocessing.
+ncores : 24
+# Spectral resolution at which to fit light curves.
+# res : 'pixel'
+res : None
+# Alternatively, number of pixel columns to bin before light curve fitting
+# npix : None
+# npix : 2038
+npix : 2048 # use 2048 which is total number of pixel columns to avoid binning
+# Planet identifier.
+planet_letter : 'b'
+
+# ====== Fit Priors + Parameters ======
+params : ['P_p1', 't0_p1', 'p_p1', 'b_p1', 'ecc_p1', 'omega_p1', 'a_p1',
+          'q1_SOSS', 'q2_SOSS',
+          'mdilution_SOSS', 'mflux_SOSS', 'sigma_w_SOSS',
+          'theta0_SOSS', 'theta1_SOSS']
+
+dists : ['fixed', 'normal', 'normal', 'normal', 'normal', 'fixed', 'normal',
+         'uniform', 'uniform',
+         'fixed', 'fixed', 'loguniform',
+         'uniform', 'uniform']
+
+hyperps : [5.72148926 , [60106.97447852884, 0.1], [0.1446, 0.05], [0.137922,0.1], [0.06,0.06], 90.0, [17.96,0.3],
+           [0, 1], [0, 1],
+           1, 0, [0.1, 100000],
+           [-1, 1], [-1, 1]]
+
+# === Detrending Paramaters ===
+# Path to file containing linear detrending parameters.
+lm_file : None
+# Key names for detrending parametrers.
+lm_parameters : ['x']
+# Path to file containing GP training parameters.
+gp_file : None
+# Key name for GP training parametrer.
+gp_parameter : ''
+
+# === Parameters for Limb-Darkening -- Transit Only ===
+# Options for limb-darkening fitting. One of 'fixed', 'prior', or 'free'.
+ld_fit_type : 'prior'
+# Stellar Metallicity
+m_h : 0.02
+# Star log Gravity
+logg : 4.633
+# Star Effective Temperature
+teff : 4425
+# Path to ExoTiC-LD Reference Files
+# See ExoTiC-LD documentation for more info: https://exotic-ld.readthedocs.io/en/latest/views/installation.html.
+ld_data_path : './exotic-ld_data'
+# Stellar models to use for limb-darkening calculation.
+# See ExoTiC-LD documentation for more info.
+ld_model_type : 'stagger'
+# Path to JWST spectrace Reference File
+# Will be in crds_cache with file name like jwst_niriss_spectrace_XXXX.fits
+spectrace_ref : '/home/sky/.crds_cache/references/jwst/niriss/jwst_niriss_spectrace_0023.fits'
+# Paths to files containing model limb-darkening coefficients.
+# If provided, will take precedence over calculated values. Must be in format compatible with read_ld_coefs.
+ldcoef_file_o1 : None
+ldcoef_file_o2 : None
+# ======================= END LIGHT CURVE FIT CONFIG FILE ===========================
